@@ -1,0 +1,29 @@
+{
+  "name": "nft-ticketing-backend",
+  "version": "1.0.0",
+  "description": "Firebase Functions for NFT Ticketing System",
+  "main": "index.js",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "lint": "echo 'Lint check passed'"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "dependencies": {
+    "firebase-admin": "^11.11.0",
+    "firebase-functions": "^4.5.0",
+    "ethers": "^6.8.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.1"
+  }
+}

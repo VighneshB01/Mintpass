@@ -1,0 +1,54 @@
+type User @table {
+  walletAddress: String! @unique
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+  userType: String
+}
+
+type Event @table {
+  organizer: User!
+  name: String!
+  date: Date!
+  location: String!
+  capacity: Int!
+  createdAt: Timestamp!
+  description: String
+  imageUrl: String
+}
+
+type NFTTicket @table {
+  event: Event!
+  owner: User!
+  tokenId: String! @unique
+  status: String!
+  price: Float!
+  createdAt: Timestamp!
+  purchaseDate: Timestamp
+  scanDate: Timestamp
+  transferredTo: User
+}
+
+type LoyaltyProgram @table {
+  name: String!
+  pointsPerEvent: Int!
+  redemptionRate: Float!
+  createdAt: Timestamp!
+  description: String
+}
+
+type LoyaltyBalance @table {
+  user: User!
+  totalPoints: Int!
+  createdAt: Timestamp!
+  updatedAt: Timestamp!
+}
+
+type Redemption @table {
+  user: User!
+  loyaltyProgram: LoyaltyProgram!
+  pointsRedeemed: Int!
+  redeemedAt: Timestamp!
+  rewardDescription: String!
+}
