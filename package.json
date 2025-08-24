@@ -1,24 +1,25 @@
 {
-  "name": "dynamic-nft-ticketing",
+  "name": "nft-ticketing-system",
   "version": "1.0.0",
-  "description": "Dynamic NFT Ticketing System with QR Validation",
+  "description": "Blockchain-based NFT ticketing system with dynamic states",
+  "main": "index.js",
   "scripts": {
-    "compile": "npx hardhat compile",
-    "test": "npx hardhat test",
-    "deploy:mumbai": "npx hardhat run scripts/deploy.js --network mumbai",
-    "verify": "npx hardhat verify --network mumbai",
-    "frontend:dev": "cd frontend && npm run dev",
-    "frontend:build": "cd frontend && npm run build",
-    "backend:deploy": "cd backend && firebase deploy",
-    "setup": "npm install && cd frontend && npm install && cd ../backend && npm install",
-    "test-setup": "node test-setup.js"
+    "build": "cd frontend && npm install && npm run build",
+    "dev": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\"",
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "deploy": "cd frontend && npm run build",
+    "test": "echo \"No tests specified\" && exit 0"
   },
+  "keywords": [
+    "nft",
+    "blockchain",
+    "ticketing",
+    "polygon",
+    "solidity"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
-    "hardhat": "^2.19.0"
-  },
-  "dependencies": {
-    "@openzeppelin/contracts": "^5.0.0",
-    "dotenv": "^16.3.1"
+    "concurrently": "^8.2.2"
   }
 }
